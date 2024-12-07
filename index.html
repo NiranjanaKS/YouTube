@@ -1,0 +1,133 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Final - Youtube UI Clone</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__left">        
+        <img
+          src="img/Screenshot 2024-12-06 215930.png"
+          alt=""
+        />
+      </div>
+
+      <div class="header__search">
+        <form action="">
+          <input type="text" placeholder="Search" id="searchInput" />
+          <button id="searchButton"><i class="material-icons">search</i></button>
+        </form>
+      </div>
+
+      <div class="header__icons">
+        <i class="material-icons display-this">search</i>
+        <i class="material-icons">videocam</i>
+        <i class="material-icons">apps</i>
+        <i class="material-icons">notifications</i>
+        <i class="material-icons display-this" id="accountIcon">account_circle</i>
+      </div>
+    </div>
+    <div class="mainBody">
+      <div class="videos">
+        <h1>Recommended</h1>
+        <div class="videos__container">
+          <div class="video" data-video-id="PpXUTUXU7Qc">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/PpXUTUXU7Qc/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author"></div>
+              <div class="title">
+                <h3>
+                  Top 5 Programming Languages to Learn in 2021 | Best Programming Languages to Learn
+                </h3>
+                <a href="">FutureCoders</a>
+              </div>
+            </div>
+          </div>
+          <div class="video" data-video-id="YpTmcCBBdTE">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/YpTmcCBBdTE/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author"></div>
+              <div class="title">
+                <h3>Build A Password Generator with React JS - Beginners Tutorial</h3>
+                <a href="">FutureCoders</a>
+              </div>
+            </div>
+          </div>
+          <div class="video" data-video-id="46cXFUzR9XM">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/46cXFUzR9XM/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author"></div>
+              <div class="title">
+                <h3>Bella Ciao Full Song | La Casa De Papel | Money Heist | Netflix India</h3>
+                <a href="">Netflix</a>
+              </div>
+            </div>
+          </div>
+          <div class="video" data-video-id="2Ji-clqUYnA">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/2Ji-clqUYnA/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author"></div>
+              <div class="title">
+                <h3>Javascript Fundamentals</h3>
+                <a href="">Coding Addict</a>
+              </div>
+            </div>
+          </div>
+          <div class="video" data-video-id="3PHXvlpOkf4">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/3PHXvlpOkf4/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author"></div>
+              <div class="title">
+                <h3>Build 15 JavaScript Projects - Vanilla JavaScript Course</h3>
+                <a href=""> freeCodeCamp.org </a>
+              </div>
+            </div>
+          </div>
+          <div class="video" data-video-id="CVClHLwv-4I">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/CVClHLwv-4I/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author"></div>
+              <div class="title">
+                <h3>Build Real Time Face Detection With JavaScript</h3>
+                <a href=""> Web Dev Simplified </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("searchButton").addEventListener("click", (event) => {
+        event.preventDefault();
+        const query = document.getElementById("searchInput").value;
+        alert(`Searching for: ${query}`);
+      });
+      document.getElementById("accountIcon").addEventListener("click", () => {
+        alert("Account icon clicked! Dropdown menu functionality can be added here.");
+      });
+      document.querySelectorAll(".video").forEach((video) => {
+        video.addEventListener("click", () => {
+          const videoId = video.getAttribute("data-video-id");
+          alert(`Navigating to video ID: ${videoId}`);
+          window.location.href = `https://www.youtube.com/watch?v=${videoId}`;
+        });
+      });
+    </script>
+  </body>
+</html>
